@@ -1,4 +1,5 @@
 package org.insset.shared;
+import java.util.regex.*;
 
 /**
  * <p>
@@ -21,7 +22,8 @@ package org.insset.shared;
  * </p>
  */
 public class FieldVerifier {
-
+    private static Pattern pattern;
+    private static Matcher matcher;
     /**
      * Verifies that the specified name is valid for our service.
      *
@@ -52,13 +54,22 @@ public class FieldVerifier {
      * @return true if valid, false if invalid
      */
     public static boolean isValidDecimal(Integer nbr) {
-        //Implement your code
-        return true;
+        if(nbr<1)
+            return false;
+        else if(nbr>2000)
+            return false;
+        else
+            return true;
     }
 
     public static boolean isValidRoman(String nbr) {
-        //Implement your code
-        return true;
+        for(int i = 0 ;i <= nbr.length();i++){
+            if(nbr.charAt(i) != 'I' ||nbr.charAt(i) != 'V' ||nbr.charAt(i) != 'X' ||nbr.charAt(i) != 'L' ||nbr.charAt(i) != 'C' ||nbr.charAt(i) != 'D' ||nbr.charAt(i) != 'M')
+                return false;
+            else 
+                return true;
+        }            
+        return false;
     }
 
     public static boolean isValidDate(String date) {
