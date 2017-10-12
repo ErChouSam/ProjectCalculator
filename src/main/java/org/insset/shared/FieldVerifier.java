@@ -84,8 +84,12 @@ public class FieldVerifier {
     
 
     public static boolean isValidDate(String date) {
-        //Implement your code
-        return true;
+        if(date.length()!= 10) 
+            return false;
+        if((date.charAt(2)=='/' && date.charAt(5)=='/') || (date.charAt(2)=='-' && date.charAt(5)=='-'))
+            return true;
+        else 
+            return false;
     }
     public static boolean isValidNombre(String nbr) {
         

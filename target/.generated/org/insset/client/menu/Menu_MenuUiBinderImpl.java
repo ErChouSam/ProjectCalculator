@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 // .ui.xml template last modified: 1507706448000
+=======
+// .ui.xml template last modified: 1507804766000
+>>>>>>> origin/dev
 package org.insset.client.menu;
 
 import com.google.gwt.core.client.GWT;
