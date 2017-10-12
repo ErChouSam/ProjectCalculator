@@ -135,8 +135,15 @@ public class CalculatorDecimalPresenter extends Composite {
             }
 
             public void onSuccess(Integer result) {
-                errorLabelRToA.setText(" ");
-                new DialogBoxInssetPresenter("Convertion Roman to arabe", valR.getText(), String.valueOf(result));
+                if(FieldVerifier.isValidRoman(valR.getText(), true, result))
+                {
+                    errorLabelRToA.setText(" ");
+                    new DialogBoxInssetPresenter("Convertion Roman to arabe", valR.getText(), String.valueOf(result));
+                }
+                else{
+                errorLabelRToA.addStyleName("serverResponseLabelError");
+                errorLabelRToA.setText("Nombre entre incorrect (doit être superieur a 1 et inférieur a 2000");
+                }
             }
         });
     }
