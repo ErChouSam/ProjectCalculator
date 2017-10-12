@@ -1,4 +1,7 @@
 package org.insset.shared;
+import com.google.gwt.core.client.GWT;
+import java.util.regex.*;
+import org.insset.server.RomanConverterServiceImpl;
 
 /**
  * <p>
@@ -21,7 +24,7 @@ package org.insset.shared;
  * </p>
  */
 public class FieldVerifier {
-
+    
     /**
      * Verifies that the specified name is valid for our service.
      *
@@ -52,17 +55,58 @@ public class FieldVerifier {
      * @return true if valid, false if invalid
      */
     public static boolean isValidDecimal(Integer nbr) {
-        //Implement your code
+        if(nbr<1)
+            return false;
+        else if(nbr>2000)
+            return false;
+        else
+            return true;
+    }
+    public static boolean isValidRoman(String snbr,boolean State, Integer Nbr) {
+        if(State)
+        {
+            if(Nbr<2000 && Nbr>1)
+                return true;
+        }
+        else{
+            for(int i = 0 ;i < snbr.length();i++){
+                if(snbr.charAt(i) == 'I' ||snbr.charAt(i) == 'V' ||snbr.charAt(i) == 'X' ||snbr.charAt(i) == 'L' ||snbr.charAt(i) == 'C' ||snbr.charAt(i) == 'D' ||snbr.charAt(i) == 'M')
+                {}
+                else
+                    return false;
+            }   
+        }        
         return true;
     }
-
-    public static boolean isValidRoman(String nbr) {
-        //Implement your code
-        return true;
+    public static boolean isValidRoman(String nbr){
+        return isValidRoman(nbr,false,0);
     }
+    
 
     public static boolean isValidDate(String date) {
-        //Implement your code
+        if(date.length()!= 10) 
+            return false;
+        if((date.charAt(2)=='/' && date.charAt(5)=='/') || (date.charAt(2)=='-' && date.charAt(5)=='-'))
+            return true;
+        else 
+            return false;
+    }
+    public static boolean isValidNombre(String nbr) {
+        
+        if(!nbr.matches("-?[0-9]+") )
+            return false;
+        if(Integer.valueOf(nbr) <=0 || Integer.valueOf(nbr)> 999)
+            return false;
         return true;
+        
+    }
+    public static boolean isValidPourcentage(String nbr) {
+        
+        if(!nbr.matches("-?[0-9]+") )
+            return false;
+        if(Integer.valueOf(nbr) <=0 || Integer.valueOf(nbr)> 99)
+            return false;
+        return true;
+        
     }
 }

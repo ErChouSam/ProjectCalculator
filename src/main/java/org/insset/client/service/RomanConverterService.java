@@ -27,5 +27,7 @@ public interface RomanConverterService extends RemoteService {
     String convertArabeToRoman(Integer nbr) throws IllegalArgumentException;
 
     String convertDateYears(String nbr) throws IllegalArgumentException;
+    
+    Integer percentCalcul(String snbr,String spercent) throws IllegalArgumentException;
 
 }

@@ -44,7 +44,7 @@
         </g:FlowPanel>
         <g:FlowPanel>
             <g:FlowPanel>
-                <g:Label>Quelle date voulez-vous convertir?</g:Label>
+                <g:Label>Quelle date voulez-vous convertir? ( JJ/MM/AAAA )</g:Label>
             </g:FlowPanel>
             <g:FlowPanel>          
               <g:TextBox ui:field="valD" text="Entrer une valeur"/>

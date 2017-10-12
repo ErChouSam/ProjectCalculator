@@ -125,7 +125,7 @@ public class CalculatorDecimalPresenter extends Composite {
     private void convertRomanToArabe() {
         if (!FieldVerifier.isValidRoman(valR.getText())) {
             errorLabelRToA.addStyleName("serverResponseLabelError");
-            errorLabelRToA.setText("Format incorect");
+            errorLabelRToA.setText("Format incorect (Rentré des chiffres Romain (IVXCLDM))");
             return;
         }
         service.convertRomanToArabe(valR.getText(), new AsyncCallback<Integer>() {
@@ -135,8 +135,15 @@ public class CalculatorDecimalPresenter extends Composite {
             }
 
             public void onSuccess(Integer result) {
-                errorLabelRToA.setText(" ");
-                new DialogBoxInssetPresenter("Convertion Roman to arabe", valR.getText(), String.valueOf(result));
+                if(FieldVerifier.isValidRoman(valR.getText(), true, result))
+                {
+                    errorLabelRToA.setText(" ");
+                    new DialogBoxInssetPresenter("Convertion Roman to arabe", valR.getText(), String.valueOf(result));
+                }
+                else{
+                errorLabelRToA.addStyleName("serverResponseLabelError");
+                errorLabelRToA.setText("Nombre entre incorrect (doit être superieur a 1 et inférieur a 2000)");
+                }
             }
         });
     }
@@ -150,7 +157,7 @@ public class CalculatorDecimalPresenter extends Composite {
             value = Integer.parseInt(valA.getText());
         } catch (NumberFormatException e) {
             errorLabelAToR.addStyleName("serverResponseLabelError");
-            errorLabelAToR.setText("Format incorect");
+            errorLabelAToR.setText("Format incorect (doit être superieur a 1 et inférieur a 2000)");
             return;
         }
         if (!FieldVerifier.isValidDecimal(value)) {
@@ -176,8 +183,8 @@ public class CalculatorDecimalPresenter extends Composite {
     private void convertDate() {
         //Verif
         if (!FieldVerifier.isValidDate(valD.getText())) {
-            errorLabelAToR.addStyleName("serverResponseLabelError");
-            errorLabelAToR.setText("Format incorect");
+            errorLabelD.addStyleName("serverResponseLabelError");
+            errorLabelD.setText("Format incorect");
             return;
         }
         //call server

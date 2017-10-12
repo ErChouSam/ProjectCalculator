@@ -58,6 +58,20 @@ public class RomanConverterService_Proxy extends RemoteServiceProxy implements o
       callback.onFailure(ex);
     }
   }
+  
+  public void percentCalcul(java.lang.String snbr, java.lang.String spercent, com.google.gwt.user.client.rpc.AsyncCallback callback) {
+    com.google.gwt.user.client.rpc.impl.RemoteServiceProxy.ServiceHelper helper = new com.google.gwt.user.client.rpc.impl.RemoteServiceProxy.ServiceHelper("RomanConverterService_Proxy", "percentCalcul");
+    try {
+      SerializationStreamWriter streamWriter = helper.start(REMOTE_SERVICE_INTERFACE_NAME, 2);
+      streamWriter.writeString("java.lang.String/2004016611");
+      streamWriter.writeString("java.lang.String/2004016611");
+      streamWriter.writeString(snbr);
+      streamWriter.writeString(spercent);
+      helper.finish(callback, ResponseReader.OBJECT);
+    } catch (SerializationException ex) {
+      callback.onFailure(ex);
+    }
+  }
   @Override
   public SerializationStreamWriter createStreamWriter() {
     ClientSerializationStreamWriter toReturn =
