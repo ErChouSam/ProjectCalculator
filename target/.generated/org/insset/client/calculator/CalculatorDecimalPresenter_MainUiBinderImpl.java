@@ -1,4 +1,4 @@
-// .ui.xml template last modified: 1507795079000
+// .ui.xml template last modified: 1507805232000
 package org.insset.client.calculator;
 
 import com.google.gwt.core.client.GWT;
@@ -679,7 +679,7 @@ public class CalculatorDecimalPresenter_MainUiBinderImpl implements UiBinder<com
       // Creation section.
       final com.google.gwt.user.client.ui.Label f_Label18 = (com.google.gwt.user.client.ui.Label) GWT.create(com.google.gwt.user.client.ui.Label.class);
       // Setup section.
-      f_Label18.setText("Quelle date voulez-vous convertir?");
+      f_Label18.setText("Quelle date voulez-vous convertir? ( JJ/MM/AAAA )");
 
       return f_Label18;
     }
