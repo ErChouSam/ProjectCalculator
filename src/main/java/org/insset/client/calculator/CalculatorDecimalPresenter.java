@@ -125,7 +125,7 @@ public class CalculatorDecimalPresenter extends Composite {
     private void convertRomanToArabe() {
         if (!FieldVerifier.isValidRoman(valR.getText())) {
             errorLabelRToA.addStyleName("serverResponseLabelError");
-            errorLabelRToA.setText("Format incorect");
+            errorLabelRToA.setText("Format incorect (doit être superieur a 1 et inférieur a 2000)");
             return;
         }
         service.convertRomanToArabe(valR.getText(), new AsyncCallback<Integer>() {
@@ -142,7 +142,7 @@ public class CalculatorDecimalPresenter extends Composite {
                 }
                 else{
                 errorLabelRToA.addStyleName("serverResponseLabelError");
-                errorLabelRToA.setText("Nombre entre incorrect (doit être superieur a 1 et inférieur a 2000");
+                errorLabelRToA.setText("Nombre entre incorrect (doit être superieur a 1 et inférieur a 2000)");
                 }
             }
         });

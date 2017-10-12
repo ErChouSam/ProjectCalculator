@@ -23,6 +23,8 @@ import org.insset.client.message.Messages;
 import org.insset.client.message.dialogbox.DialogBoxInssetPresenter;
 import org.insset.client.service.ExempleService;
 import org.insset.client.service.ExempleServiceAsync;
+import org.insset.client.service.RomanConverterService;
+import org.insset.client.service.RomanConverterServiceAsync;
 import org.insset.shared.FieldVerifier;
 
 /**
@@ -54,7 +56,7 @@ public class PourcentagePresenter extends Composite {
      * Create a remote service proxy to talk to the server-side Greeting
      * service.
      */
-    private final ExempleServiceAsync service = GWT.create(ExempleService.class);
+    private final RomanConverterServiceAsync service = GWT.create(RomanConverterService.class);
 
     private final Messages messages = GWT.create(Messages.class);
 
@@ -90,28 +92,34 @@ public class PourcentagePresenter extends Composite {
         boutonEnregistrer.addClickHandler(new ClickHandler() {
             @Override
             public void onClick(ClickEvent event) {
-                contacterService();
+                CalculPercent();
             }
 
         });
     }
 
-    private void contacterService() {
+    private void CalculPercent() {
         errorLabel.setText("");
         final String textToServer = montant.getText();
-        if (!FieldVerifier.isValidName(textToServer)) {
+        final String Pourcentage = pourcentage.getText();
+        if (!FieldVerifier.isValidNombre(textToServer)) {
             errorLabel.addStyleName("serverResponseLabelError");
-            errorLabel.setText("Aucun texte entré!!");
+            errorLabel.setText("Format incorrect Nombre.");
             return;
         }
-        service.inverserChaine(textToServer, new AsyncCallback<String>() {
+        if (!FieldVerifier.isValidPourcentage(Pourcentage)) {
+            errorLabel.addStyleName("serverResponseLabelError");
+            errorLabel.setText("Format incorrect Pourcentage.");
+            return;
+        }
+        service.percentCalcul(textToServer,Pourcentage, new AsyncCallback<Integer>() {
             public void onFailure(Throwable caught) {
                 // Show the RPC error message to the user
-                Window.alert(SERVER_ERROR);
+                Window.alert("Error");
             }
 
-            public void onSuccess(String result) {
-                new DialogBoxInssetPresenter("Votre nom inversé :", textToServer, result);
+            public void onSuccess(Integer result) {
+                new DialogBoxInssetPresenter("Remise :", textToServer, String.valueOf(result));
             }
         });
     }

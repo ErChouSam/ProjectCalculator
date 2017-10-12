@@ -87,4 +87,22 @@ public class FieldVerifier {
         //Implement your code
         return true;
     }
+    public static boolean isValidNombre(String nbr) {
+        
+        if(!nbr.matches("-?[0-9]+") )
+            return false;
+        if(Integer.valueOf(nbr) <=0 || Integer.valueOf(nbr)> 999)
+            return false;
+        return true;
+        
+    }
+    public static boolean isValidPourcentage(String nbr) {
+        
+        if(!nbr.matches("-?[0-9]+") )
+            return false;
+        if(Integer.valueOf(nbr) <=0 || Integer.valueOf(nbr)> 99)
+            return false;
+        return true;
+        
+    }
 }

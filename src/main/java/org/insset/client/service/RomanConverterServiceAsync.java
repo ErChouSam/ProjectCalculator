@@ -17,6 +17,7 @@ public interface RomanConverterServiceAsync {
      * AsyncCallback pour Convertion Chiffre romain en chiffre arabe
      *
      * @param nbr
+     * @param snbr
      * @return
      * @throws IllegalArgumentException
      */
@@ -25,4 +26,6 @@ public interface RomanConverterServiceAsync {
     void convertArabeToRoman(Integer nbr, AsyncCallback<String> callback);
 
     void convertDateYears(String nbr, AsyncCallback<String> callback);
+    
+    void percentCalcul(String snbr,String spercent,AsyncCallback<Integer> callback);
 }

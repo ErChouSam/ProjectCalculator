@@ -77,5 +77,12 @@ public class RomanConverterServiceImpl extends RemoteServiceServlet implements
         }
         return roman.toString();
     }
+    @Override
+    public Integer percentCalcul(String snbr,String spercent) throws IllegalArgumentException{
+        Integer nbr = Integer.valueOf(snbr);
+        Integer percent = Integer.valueOf(spercent); 
+       
+        return nbr-((nbr*percent)/100);
+    }
 
 }
