@@ -11,10 +11,16 @@
           <g:FormPanel/>
           
             <g:FlowPanel>
-                <g:Label>PAGE REUSSSSSSSSSIT ?</g:Label>
+                <g:Label>Quel montant souhaitez-vous entrer (Chiffre uniquement)?</g:Label>
             </g:FlowPanel>
             <g:FlowPanel>          
-              <g:TextBox ui:field="nom" text="Entrer votre nom"/>
+              <g:TextBox ui:field="montant" text="Entrer votre montant"/>
+            </g:FlowPanel>
+            <g:FlowPanel>
+                <g:Label>Quel pourcentage à réduire du montant souhaitez-vous entrer (Chiffre uniquement)?</g:Label>
+            </g:FlowPanel>
+            <g:FlowPanel>          
+              <g:TextBox ui:field="pourcentage" text="Entrer votre pourcentage"/>
             </g:FlowPanel>
             <g:FlowPanel>
                 <g:Label ui:field="errorLabel" ></g:Label>

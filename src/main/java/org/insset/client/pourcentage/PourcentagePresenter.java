@@ -36,7 +36,9 @@ public class PourcentagePresenter extends Composite {
     @UiField
     public SubmitButton boutonEnregistrer;
     @UiField
-    public TextBox nom;
+    public TextBox montant;
+    @UiField
+    public TextBox pourcentage;
     @UiField
     public Label errorLabel;
 
@@ -80,7 +82,8 @@ public class PourcentagePresenter extends Composite {
         boutonClear.addClickHandler(new ClickHandler() {
             @Override
             public void onClick(ClickEvent event) {
-                nom.setText("");
+                montant.setText("");
+                pourcentage.setText("");
                 errorLabel.setText("");
             }
         });
@@ -95,7 +98,7 @@ public class PourcentagePresenter extends Composite {
 
     private void contacterService() {
         errorLabel.setText("");
-        final String textToServer = nom.getText();
+        final String textToServer = montant.getText();
         if (!FieldVerifier.isValidName(textToServer)) {
             errorLabel.addStyleName("serverResponseLabelError");
             errorLabel.setText("Aucun texte entré!!");

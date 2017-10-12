@@ -1,4 +1,4 @@
-// .ui.xml template last modified: 1507796718000
+// .ui.xml template last modified: 1507799019000
 package org.insset.client.pourcentage;
 
 import com.google.gwt.core.client.GWT;
@@ -164,6 +164,8 @@ public class PourcentagePresenter_AddUiBinderImpl implements UiBinder<com.google
       f_FlowPanel2.add(get_f_FlowPanel4());
       f_FlowPanel2.add(get_f_FlowPanel6());
       f_FlowPanel2.add(get_f_FlowPanel7());
+      f_FlowPanel2.add(get_f_FlowPanel9());
+      f_FlowPanel2.add(get_f_FlowPanel10());
       f_FlowPanel2.add(get_formActions());
 
       return f_FlowPanel2;
@@ -208,7 +210,7 @@ public class PourcentagePresenter_AddUiBinderImpl implements UiBinder<com.google
       // Creation section.
       final com.google.gwt.user.client.ui.Label f_Label5 = (com.google.gwt.user.client.ui.Label) GWT.create(com.google.gwt.user.client.ui.Label.class);
       // Setup section.
-      f_Label5.setText("PAGE REUSSSSSSSSSIT ?");
+      f_Label5.setText("Quel montant souhaitez-vous entrer (Chiffre uniquement)?");
 
       return f_Label5;
     }
@@ -223,26 +225,26 @@ public class PourcentagePresenter_AddUiBinderImpl implements UiBinder<com.google
       // Creation section.
       final com.google.gwt.user.client.ui.FlowPanel f_FlowPanel6 = (com.google.gwt.user.client.ui.FlowPanel) GWT.create(com.google.gwt.user.client.ui.FlowPanel.class);
       // Setup section.
-      f_FlowPanel6.add(get_nom());
+      f_FlowPanel6.add(get_montant());
 
       return f_FlowPanel6;
     }
 
     /**
-     * Getter for nom called 1 times. Type: DEFAULT. Build precedence: 4.
+     * Getter for montant called 1 times. Type: DEFAULT. Build precedence: 4.
      */
-    private com.google.gwt.user.client.ui.TextBox get_nom() {
-      return build_nom();
+    private com.google.gwt.user.client.ui.TextBox get_montant() {
+      return build_montant();
     }
-    private com.google.gwt.user.client.ui.TextBox build_nom() {
+    private com.google.gwt.user.client.ui.TextBox build_montant() {
       // Creation section.
-      final com.google.gwt.user.client.ui.TextBox nom = (com.google.gwt.user.client.ui.TextBox) GWT.create(com.google.gwt.user.client.ui.TextBox.class);
+      final com.google.gwt.user.client.ui.TextBox montant = (com.google.gwt.user.client.ui.TextBox) GWT.create(com.google.gwt.user.client.ui.TextBox.class);
       // Setup section.
-      nom.setText("Entrer votre nom");
+      montant.setText("Entrer votre montant");
 
-      this.owner.nom = nom;
+      this.owner.montant = montant;
 
-      return nom;
+      return montant;
     }
 
     /**
@@ -255,9 +257,71 @@ public class PourcentagePresenter_AddUiBinderImpl implements UiBinder<com.google
       // Creation section.
       final com.google.gwt.user.client.ui.FlowPanel f_FlowPanel7 = (com.google.gwt.user.client.ui.FlowPanel) GWT.create(com.google.gwt.user.client.ui.FlowPanel.class);
       // Setup section.
-      f_FlowPanel7.add(get_errorLabel());
+      f_FlowPanel7.add(get_f_Label8());
 
       return f_FlowPanel7;
+    }
+
+    /**
+     * Getter for f_Label8 called 1 times. Type: DEFAULT. Build precedence: 4.
+     */
+    private com.google.gwt.user.client.ui.Label get_f_Label8() {
+      return build_f_Label8();
+    }
+    private com.google.gwt.user.client.ui.Label build_f_Label8() {
+      // Creation section.
+      final com.google.gwt.user.client.ui.Label f_Label8 = (com.google.gwt.user.client.ui.Label) GWT.create(com.google.gwt.user.client.ui.Label.class);
+      // Setup section.
+      f_Label8.setText("Quel pourcentage à réduire du montant souhaitez-vous entrer (Chiffre uniquement)?");
+
+      return f_Label8;
+    }
+
+    /**
+     * Getter for f_FlowPanel9 called 1 times. Type: DEFAULT. Build precedence: 3.
+     */
+    private com.google.gwt.user.client.ui.FlowPanel get_f_FlowPanel9() {
+      return build_f_FlowPanel9();
+    }
+    private com.google.gwt.user.client.ui.FlowPanel build_f_FlowPanel9() {
+      // Creation section.
+      final com.google.gwt.user.client.ui.FlowPanel f_FlowPanel9 = (com.google.gwt.user.client.ui.FlowPanel) GWT.create(com.google.gwt.user.client.ui.FlowPanel.class);
+      // Setup section.
+      f_FlowPanel9.add(get_pourcentage());
+
+      return f_FlowPanel9;
+    }
+
+    /**
+     * Getter for pourcentage called 1 times. Type: DEFAULT. Build precedence: 4.
+     */
+    private com.google.gwt.user.client.ui.TextBox get_pourcentage() {
+      return build_pourcentage();
+    }
+    private com.google.gwt.user.client.ui.TextBox build_pourcentage() {
+      // Creation section.
+      final com.google.gwt.user.client.ui.TextBox pourcentage = (com.google.gwt.user.client.ui.TextBox) GWT.create(com.google.gwt.user.client.ui.TextBox.class);
+      // Setup section.
+      pourcentage.setText("Entrer votre pourcentage");
+
+      this.owner.pourcentage = pourcentage;
+
+      return pourcentage;
+    }
+
+    /**
+     * Getter for f_FlowPanel10 called 1 times. Type: DEFAULT. Build precedence: 3.
+     */
+    private com.google.gwt.user.client.ui.FlowPanel get_f_FlowPanel10() {
+      return build_f_FlowPanel10();
+    }
+    private com.google.gwt.user.client.ui.FlowPanel build_f_FlowPanel10() {
+      // Creation section.
+      final com.google.gwt.user.client.ui.FlowPanel f_FlowPanel10 = (com.google.gwt.user.client.ui.FlowPanel) GWT.create(com.google.gwt.user.client.ui.FlowPanel.class);
+      // Setup section.
+      f_FlowPanel10.add(get_errorLabel());
+
+      return f_FlowPanel10;
     }
 
     /**
