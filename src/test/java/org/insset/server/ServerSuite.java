@@ -17,7 +17,7 @@ import org.junit.runners.Suite;
  * @author talend
  */
 @RunWith(Suite.class)
-@Suite.SuiteClasses({org.insset.server.RomanConverterServiceImplTest.class, org.insset.server.ExempleServiceImplTest.class})
+@Suite.SuiteClasses({org.insset.server.RomanConverterServiceImplTest.class})
 public class ServerSuite {
 
     @BeforeClass
