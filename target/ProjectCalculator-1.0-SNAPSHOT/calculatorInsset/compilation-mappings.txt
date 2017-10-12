@@ -1,36 +1,16 @@
-<<<<<<< HEAD
-1B4DE8D84D827E865041BEECBA9A91E1.cache.js
-user.agent ie8
-=======
-5CC79A1B0B5286D6D1BE661333320874.cache.js
-user.agent safari
->>>>>>> origin/dev
-
-<<<<<<< HEAD
-3653DCD4911D4F91A5D81E58A98CA6A2.cache.js
-=======
-93CB6D899E2DB29AD59B6F815BE79AE9.cache.js
+AA87531AAE820A4B231847A102893C6D.cache.js
 user.agent gecko1_8
 
-9A2C606A3022EACA3158E6846F5BF566.cache.js
->>>>>>> origin/dev
+C653EAF841227F0E23774983F4FDC9BE.cache.js
+user.agent ie8
+
+D12293F7CFD8C1CD6CEA8DCF7B90115C.cache.js
+user.agent ie9
+
+F793CA667349674A06F801D874AAD149.cache.js
 user.agent ie10
 
-<<<<<<< HEAD
-685C4F3D46105134AE93B05598D7A583.cache.js
+F9CF3F5815D691F6E9CCFA5BAB6D203D.cache.js
 user.agent safari
-=======
-AB78918E77379C2C8E35CC5946FC232A.cache.js
-user.agent ie9
-
-ED4A6015ECFC14FF93E0572310B05333.cache.js
-user.agent ie8
->>>>>>> origin/dev
-
-C1347AACC01B652FF210925203CED0FD.cache.js
-user.agent gecko1_8
-
-C368B0A23D5A3CD4AB0C57971284CCEB.cache.js
-user.agent ie9
 
 Devmode:devmode.js

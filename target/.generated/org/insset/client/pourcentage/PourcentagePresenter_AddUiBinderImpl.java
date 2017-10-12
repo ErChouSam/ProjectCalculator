@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 // .ui.xml template last modified: 1507800954000
-=======
-// .ui.xml template last modified: 1507804784000
->>>>>>> origin/dev
 package org.insset.client.pourcentage;
 
 import com.google.gwt.core.client.GWT;

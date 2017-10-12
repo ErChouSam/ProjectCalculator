@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-// .ui.xml template last modified: 1507706448000
-=======
-// .ui.xml template last modified: 1507805232000
->>>>>>> origin/dev
+// .ui.xml template last modified: 1507811569000
 package org.insset.client.calculator;
 
 import com.google.gwt.core.client.GWT;
