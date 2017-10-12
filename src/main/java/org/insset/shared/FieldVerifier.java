@@ -1,5 +1,7 @@
 package org.insset.shared;
+import com.google.gwt.core.client.GWT;
 import java.util.regex.*;
+import org.insset.server.RomanConverterServiceImpl;
 
 /**
  * <p>
@@ -22,8 +24,7 @@ import java.util.regex.*;
  * </p>
  */
 public class FieldVerifier {
-    private static Pattern pattern;
-    private static Matcher matcher;
+    
     /**
      * Verifies that the specified name is valid for our service.
      *
@@ -61,16 +62,26 @@ public class FieldVerifier {
         else
             return true;
     }
-
-    public static boolean isValidRoman(String nbr) {
-        for(int i = 0 ;i <= nbr.length();i++){
-            if(nbr.charAt(i) != 'I' ||nbr.charAt(i) != 'V' ||nbr.charAt(i) != 'X' ||nbr.charAt(i) != 'L' ||nbr.charAt(i) != 'C' ||nbr.charAt(i) != 'D' ||nbr.charAt(i) != 'M')
-                return false;
-            else 
+    public static boolean isValidRoman(String snbr,boolean State, Integer Nbr) {
+        if(State)
+        {
+            if(Nbr<2000 && Nbr>1)
                 return true;
-        }            
-        return false;
+        }
+        else{
+            for(int i = 0 ;i < snbr.length();i++){
+                if(snbr.charAt(i) == 'I' ||snbr.charAt(i) == 'V' ||snbr.charAt(i) == 'X' ||snbr.charAt(i) == 'L' ||snbr.charAt(i) == 'C' ||snbr.charAt(i) == 'D' ||snbr.charAt(i) == 'M')
+                {}
+                else
+                    return false;
+            }   
+        }        
+        return true;
     }
+    public static boolean isValidRoman(String nbr){
+        return isValidRoman(nbr,false,0);
+    }
+    
 
     public static boolean isValidDate(String date) {
         //Implement your code
